@@ -1,0 +1,27 @@
+id: useeffect_hook
+learningObjectives:
+  - Understand the useEffect hook for managing side effects.
+hints:
+  - Explore useEffect in this [React
+    Documentation](https://reactjs.org/docs/hooks-effect.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: UseEffect is the hook for managing side effects in React.
+          - text: It's like componentDidMount, componentDidUpdate, and componentWillUnmount
+              combined.
+          - text: UseEffect lets you perform data fetching, subscriptions, or manual DOM
+              manipulations.
+          - text: Learn to clean up effects to avoid memory leaks by using return functions
+              inside useEffect.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
