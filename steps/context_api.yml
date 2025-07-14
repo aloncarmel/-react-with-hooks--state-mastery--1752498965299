@@ -1,0 +1,34 @@
+id: context_api
+learningObjectives:
+  - Understand how the Context API integrates with hooks.
+hints:
+  - Learn more about the [Context API](https://reactjs.org/docs/context.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: The Context API provides a way to pass data through the component tree
+              without prop drilling.
+          - text: When used with hooks, it makes data sharing between components easier.
+          - text: It's especially useful for global settings like theme or user language.
+          - text: Mastering Context API with hooks simplifies data access across large
+              applications.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: bot_message
+        params:
+          person: lucca
+          messages:
+            - text: You've conquered React hooks and state management! You're now ready to
+                simplify and streamline your React projects with your newfound
+                knowledge. Take these skills into the world, and make your React
+                applications not just functional, but a work of art. Until our
+                next adventure in code, may your virtual DOM be ever elegant!
+      - actionId: finish_step
