@@ -1,0 +1,26 @@
+id: usestate_hook
+learningObjectives:
+  - Learn how to use the useState hook in React.
+hints:
+  - Check out this [introductory
+    guide](https://reactjs.org/docs/hooks-state.html) to useState.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: The useState hook is all about managing state in functional components.
+          - text: It's a hook that returns a stateful value and a function to update it.
+          - text: Think of it like having a state variable and a setState function from
+              class components.
+          - text: An example use case is managing form data or toggling values.
+          - text: Try using it in a simple component to see how it works!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
