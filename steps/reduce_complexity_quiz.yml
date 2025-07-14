@@ -1,0 +1,55 @@
+id: reduce_complexity_quiz
+learningObjectives:
+  - Identify how hooks reduce complexity in code.
+hints:
+  - Consider how hooks affect code structure and readability.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: How do hooks help in reducing complexity in React components?
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - By forcing complex logic into a single component
+          - By eliminating the need for lifecycle methods
+          - By making code more verbose
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Not quite, hooks actually help divide logic across components better.
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Yes! Hooks let you manage lifecycle events directly, removing class
+                      complexity.
+            - actionId: finish_step
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Actually, hooks tend to make code more concise. Give it another try.
+            - actionId: replay_action
+              params:
+                actionName: quiz
