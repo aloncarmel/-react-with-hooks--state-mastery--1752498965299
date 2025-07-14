@@ -1,0 +1,26 @@
+id: context_and_hooks
+learningObjectives:
+  - Learn how to manage state with useContext and useReducer.
+hints:
+  - Here's a handy guide on [Context and
+    Reducer](https://reactjs.org/docs/hooks-reference.html#usereducer).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Let's talk about useContext and useReducer for state management.
+          - text: useContext provides a way to share values like global data across the
+              component tree.
+          - text: When combined with useReducer, it can manage more complex state with
+              actions.
+          - text: This pattern is comparable to Redux but often simpler to implement.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
